@@ -1,0 +1,600 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    transition: .2s linear;
+    list-style: none;
+    scroll-behavior: smooth;
+    scroll-padding-top: 3rem;
+}
+
+html{
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+    overflow-x: hidden;
+}
+
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #fff;
+   padding-right: 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+    height: 7%;
+}
+
+.menu-openner{
+    font-size: 4rem;
+    color: #C6D04D;
+    padding: 28px;
+    text-decoration: none;
+    font-style: normal;
+}
+
+.fas{
+    color: #C6D04D;
+}
+
+.fas:hover{
+    color: #666;
+}
+
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.parte1 .container{
+
+    width: 500px;
+    border-radius: 8px;
+    padding: 60px;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, .1),
+                0 5px 12px -2px rgba(0, 0, 0, .1),
+                0 18px 36px -6px rgba(0, 0, 0, .1);
+}
+
+.parte1 .container .title{
+    font-size: 28px;
+}
+
+.parte1 .container form .category{
+    margin-top: 10px;
+    padding-top: 20px;
+}
+
+.parte1 .category label{
+    width: 100%;
+    padding: 25px;
+    box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, .2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    height: 75px;
+    border-radius: 5px;
+    font-size: 18px;
+}
+
+.parte1 label:nth-child(2), label:nth-child(3){
+    margin: 15px 0;
+}
+
+#visa:checked ~ .category .visaMet,
+#mastercard:checked ~ .category .masMet,
+#pix:checked ~ .category .pixMet,
+#boleto:checked ~ .category .bolMet
+{
+    box-shadow: 0px 0px 0px 1px #C6d04d;
+}
+
+#visa:checked ~ .category .visaMet .check,
+#mastercard:checked ~ .category .masMet .check,
+#pix:checked ~ .category .pixMet .check,
+#boleto:checked ~ .category .bolMet .check
+{
+   display: block;
+}
+
+.parte1 .imgName span{
+    margin-left: 20px;
+    font-size: 18px;
+}
+
+.parte1 .imgName .imgContainer{
+    width: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.parte1 label .imgName{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.parte1 img{
+    width: 80px;
+    height: auto;
+}
+
+.parte1 span{
+    color: #C6d04d;
+    font-weight: bold;
+}
+
+.parte1 .check{
+    display: none;
+}
+
+.parte1 .check i{
+    font-size: 24px;
+}
+
+.parte1 .container form input{
+    display: none;
+}
+
+.parte1 input[type="radio"] {
+    width: 25px;
+    height: 25px;
+}
+
+
+
+.visap .visa-container{
+    left: 50px;
+    min-height: 100vh;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+    padding-bottom: 60px;
+}
+
+.visap .visa-container form{
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, .1);
+    padding: 20px;
+    width: 600px;
+    padding-top: 160px ;
+}
+
+.visap .visa-container form .visa-inputBox{
+    margin-top: 20px;
+}
+
+.visap .visa-container form .visa-inputBox span{
+    display: block;
+    color: #999;
+    padding-bottom: 5px;
+}
+
+.visap .visa-container form .visa-inputBox input,
+.visap .visa-container form .visa-inputBox select{
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, .3);
+    color: #444;
+}
+
+.visap .visa-container form .visa-flexbox{
+    display: flex;
+    gap: 15px;
+}
+
+.visap .visa-container form .visa-flexbox .visa-inputBox{
+    flex: 1 1 150px;
+}
+
+.visap .visa-container form .visa-submit-btn{
+    width: 100%;
+    background: linear-gradient(45deg, #C6d04d, #f3ffa5);
+    margin-top: 20px;
+    padding: 10px;
+    font-size: 20px;
+    color: #fff;
+    cursor: pointer;
+    transition: .2s linear;
+    border-radius: 10px;
+}
+
+.visap .visa-container form .visa-submit-btn:hover{
+    letter-spacing: 2px;
+    opacity: .8;
+}
+
+.visap .visa-container .visa-card-container{
+    margin-bottom: -150px;
+    position: relative;
+    height: 250px;
+    width: 400px;
+}
+
+.visap .visa-container .visa-card-container .visa-front{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0; left: 0;
+    background: linear-gradient(#120854, #611bf7);
+    border-radius: 5px;
+    backface-visibility: hidden;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, .2);
+    padding: 20px;
+    transition: transform .4s ease-out;
+    transform: perspective(1000px) rotateY(0deg);
+}
+
+.visap .visa-container .visa-card-container .visa-front .visa-image{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 10px;
+}
+
+.visap .visa-container .visa-card-container .visa-front .visa-image img{
+    height: 50px;
+}
+
+.visap .visa-container .visa-card-container .visa-front .visa-card-number-box{
+    padding: 30px 0;
+    font-size: 22px;
+    color: #fff;
+}
+
+.visap .visa-container .visa-card-container .visa-front .visa-card-number{
+    color: #fff;
+}
+
+.visap .visa-container .visa-card-container .visa-front .visa-flexbox{
+    display: flex;
+}
+
+.visap .visa-container .visa-card-container .visa-front .visa-flexbox .visa-box:nth-child(1){
+    margin-right: auto;
+}
+
+.visap .visa-container .visa-card-container .visa-front .visa-flexbox .visa-box{
+    font-size: 15px;
+    color: #fff;
+}
+
+.visap .visa-container .visa-card-container .visa-back{
+    position: absolute;
+    top: 0; left: 0;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(#120854, #611bf7);
+    border-radius: 5px;
+    padding: 20px 0;
+    text-align: right;
+    backface-visibility: hidden;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, .2);
+    transition: transform .4s ease-out;
+    transform: perspective(1000px) rotateY(180deg);
+}
+
+.visap .visa-container .visa-card-container .visa-back .visa-stripe{
+    background: #000;
+    width: 100%;
+    margin: 10px 0;
+    height: 50px;
+}
+
+.visap .visa-container .visa-card-container .visa-back .visa-box{
+    padding: 0 20px;
+}
+
+.visap .visa-container .visa-card-container .visa-back .visa-box span{
+    color: #fff;
+    font-size: 15px;
+}
+
+.visap .visa-container .visa-card-container .visa-back .visa-box .visa-cvv-box{
+    height: 50px;
+    padding: 10px;
+    margin-top: 5px;
+    color: #333;
+    background: #fff;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.visap .visa-container .visa-card-container .visa-back .visa-box .visa-cvv-box img{
+    margin-top: 30px;
+    height: 30px;
+}
+
+.visap span{
+    color: #fff;
+}
+
+
+
+.mast .container{
+    left: 50px;
+    min-height: 100vh;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+    padding-bottom: 60px;
+}
+
+.mast .container form{
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, .1);
+    padding: 20px;
+    width: 600px;
+    padding-top: 160px ;
+}
+
+.mast .container form .inputBox{
+    margin-top: 20px;
+}
+
+.mast .container form .inputBox span{
+    display: block;
+    color: #999;
+    padding-bottom: 5px;
+}
+
+.mast .container form .inputBox input,
+.mast .container form .inputBox select{
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, .3);
+    color: #444;
+}
+
+.mast .container form .flexbox{
+    display: flex;
+    gap: 15px;
+}
+
+.mast .container form .flexbox .inputBox{
+    flex: 1 1 150px;
+}
+
+.mast .container form .submit-btn{
+    width: 100%;
+    background: linear-gradient(45deg, #C6d04d, #f3ffa5);
+    margin-top: 20px;
+    padding: 10px;
+    font-size: 20px;
+    color: #fff;
+    cursor: pointer;
+    transition: .2s linear;
+    border-radius: 10px;
+}
+
+.mast .container form .submit-btn:hover{
+    letter-spacing: 2px;
+    opacity: .8;
+}
+
+.mast .container .card-container{
+    margin-bottom: -150px;
+    position: relative;
+    height: 250px;
+    width: 400px;
+}
+
+.mast .container .card-container .front{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0; left: 0;
+    background: linear-gradient(#232323, #878787);
+    border-radius: 5px;
+    backface-visibility: hidden;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, .2);
+    padding: 20px;
+    transition: transform .4s ease-out;
+    transform: perspective(1000px) rotateY(0deg);
+}
+
+.mast .container .card-container .front .image{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 10px;
+}
+
+.mast .container .card-container .front .image img{
+    height: 50px;
+}
+
+.mast .container .card-container .front .card-number-box{
+    padding: 30px 0;
+    font-size: 22px;
+    color: #fff;
+}
+
+.mast .container .card-container .front .card-number{
+    color: #fff;
+}
+
+.mast .container .card-container .front .flexbox{
+    display: flex;
+}
+
+.mast .container .card-container .front .flexbox .box:nth-child(1){
+    margin-right: auto;
+}
+
+.mast .container .card-container .front .flexbox .box{
+    font-size: 15px;
+    color: #fff;
+}
+
+.mast .container .card-container .back{
+    position: absolute;
+    top: 0; left: 0;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(#232323, #878787);
+    border-radius: 5px;
+    padding: 20px 0;
+    text-align: right;
+    backface-visibility: hidden;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, .2);
+    transition: transform .4s ease-out;
+    transform: perspective(1000px) rotateY(180deg);
+}
+
+.mast .container .card-container .back .stripe{
+    background: #000;
+    width: 100%;
+    margin: 10px 0;
+    height: 50px;
+}
+
+.mast .container .card-container .back .box{
+    padding: 0 20px;
+}
+
+.mast .container .card-container .back .box span{
+    color: #fff;
+    font-size: 15px;
+}
+
+.mast .container .card-container .back .box .cvv-box{
+    height: 50px;
+    padding: 10px;
+    margin-top: 5px;
+    color: #333;
+    background: #fff;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.mast .container .card-container .back .box .cvv-box img{
+    margin-top: 30px;
+    height: 30px;
+}
+
+.mast span{
+    color: #fff;
+}
+
+
+
+.pixa .pix-container{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    left: 50px;
+    background: #fff;
+    display: flex;
+    flex-flow: column;
+    padding-bottom: 60px;
+    width: 50%;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, .1);
+}
+
+.pixa h3{
+  
+    padding: 5px;
+    color: #C6D04D;
+    font-weight: bolder;
+    font-size: 30px;
+}
+
+.pixa p{
+   
+    font-size: 15px;
+    padding: 15px;
+}
+
+
+.pixa  button{
+    width: 55%;
+    background: linear-gradient(45deg, #C6d04d, #f3ffa5);
+    margin-top: 20px;
+    padding: 10px;
+    margin-left: 20px;
+    font-size: 20px;
+    color: #fff;
+    cursor: pointer;
+    transition: .2s linear;
+    border-radius: 10px;
+}
+
+.pixa button:hover{
+    letter-spacing: 2px;
+    opacity: .8;
+}
+
+
+
+
+
+
+
+.bol .bol-container{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    left: 50px;
+    background: #fff;
+    display: flex;
+    flex-flow: column;
+    padding-bottom: 60px;
+    width: 100%;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, .1);
+}
+
+.bol h3{
+  
+    padding: 5px;
+    color: #C6D04D;
+    font-weight: bolder;
+    font-size: 30px;
+}
+
+.bol p{
+   
+    font-size: 15px;
+    padding: 15px;
+}
+
+
+.bol  button{
+    width: 55%;
+    background: linear-gradient(45deg, #C6d04d, #f3ffa5);
+    margin-top: 20px;
+    padding: 10px;
+    margin-left: 20px;
+    font-size: 20px;
+    color: #fff;
+    cursor: pointer;
+    transition: .2s linear;
+    border-radius: 10px;
+}
+
+.bol button:hover{
+    letter-spacing: 2px;
+    opacity: .8;
+}

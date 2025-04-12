@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="media.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Amambi</title>
+</head>
+<body>
+
+<header>
+    <div class="menu-openner"><a href="indexado.html" class="fas fa-xmark"></a></div>
+</header>
+
+<section class="login">
+    <div class="container">
+        <div class="content first-content">
+            <div class="first-column">
+                <h2 class="title title-primary">Bem vindo!</h2>
+                <img src="coco.png" alt="" width="70%">
+                <button id="signin" class="btn btn-primary">Logar</button>
+            </div>    
+            <div class="second-column">
+                <h2 class="title title-second">Criar Conta</h2>
+                <div class="social-media">
+                    <ul class="list-social-media">
+                        <a class="link-social-media" href="https://www.facebook.com/vivaamambi/?locale=pt_BR">
+                            <li class="item-social-media">
+                                <i class="fab fa-facebook-f"></i>        
+                            </li>
+                        </a>
+                        <a class="link-social-media" href="mailto:joaopedro@amambi.com.br">
+                            <li class="item-social-media">
+                                <i class="fab fa-google-plus-g"></i>
+                            </li>
+                        </a>
+                        <a class="link-social-media" href="https://wa.me/551434134422">
+                            <li class="item-social-media">
+                                <i class="fab fa-whatsapp"></i>
+                            </li>
+                        </a>
+                    </ul>
+                </div>
+                <p class="description description-second">Ou use o email:</p>
+                <form class="form" onsubmit="event.preventDefault(); criarConta();">
+                    <label class="label-input" for="nome">
+                        <i class="far fa-user icon-modify"></i>
+                        <input type="text" placeholder="Nome" id="nome">
+                    </label>
+                    
+                    <label class="label-input" for="email-create">
+                        <i class="far fa-envelope icon-modify"></i>
+                        <input id="email-create" type="email" placeholder="Email">
+                    </label>
+                    
+                    <label class="label-input" for="senha-create">
+                        <i class="fas fa-lock icon-modify"></i>
+                        <input id="senha-create" type="password" placeholder="Senha">
+                    </label>
+                    
+                    <button type="submit" class="btn btn-second">Criar</button>        
+                </form>
+            </div>
+        </div>
+        <div class="content second-content">
+            <div class="first-column">
+                <h2 class="title title-primary">Bem vindo de volta!</h2>
+                <img src="cocob.png" alt="" width="80%">
+                <button id="signup" class="btn btn-primary">Criar</button>
+            </div>
+            <div class="second-column">
+                <h2 class="title title-second">Log in:</h2>
+                <div class="social-media">
+                    <ul class="list-social-media">
+                        <a class="link-social-media" href="https://www.facebook.com/vivaamambi/?locale=pt_BR">
+                            <li class="item-social-media">
+                                <i class="fab fa-facebook-f"></i>
+                            </li>
+                        </a>
+                        <a class="link-social-media" href="mailto:joaopedro@amambi.com.br">
+                            <li class="item-social-media">
+                                <i class="fab fa-google-plus-g"></i>
+                            </li>
+                        </a>
+                        <a class="link-social-media" href="https://wa.me/551434134422">
+                            <li class="item-social-media">
+                                <i class="fab fa-whatsapp"></i>
+                            </li>
+                        </a>
+                    </ul>
+                </div>
+                <p class="description description-second">Ou use o email:</p>
+                <form class="form" onsubmit="event.preventDefault(); logar();">
+                    <label class="label-input" for="email-login">
+                        <i class="far fa-envelope icon-modify"></i>
+                        <input id="email-login" type="email" placeholder="Email">
+                    </label>
+                
+                    <label class="label-input" for="senha-login">
+                        <i class="fas fa-lock icon-modify"></i>
+                        <input id="senha-login" type="password" placeholder="Senha">
+                    </label>
+                
+                    <a class="password" href="#">Esqueceu a senha?</a>
+                    <button type="submit" class="btn btn-second">Logar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+
+    var btnSignin = document.querySelector("#signin");
+    var btnSignup = document.querySelector("#signup");
+    var body = document.querySelector("body");
+
+    btnSignin.addEventListener("click", function () {
+        body.className = "sign-in-js"; 
+    });
+
+    btnSignup.addEventListener("click", function () {
+        body.className = "sign-up-js";
+    });
+
+    window.onload = function() {
+        if (!localStorage.getItem('userData')) {
+            var userData = {
+                nome: "Isabella Ferreira",
+                email: "ferreiraisabella552@gmail.com",
+                senha: "socorro"
+            };
+            localStorage.setItem("userData", JSON.stringify(userData));
+        }
+    }
+
+    function criarConta() {
+        var nome = document.getElementById('nome').value.trim();
+        var email = document.getElementById('email-create').value.trim();
+        var senha = document.getElementById('senha-create').value.trim();
+
+        if (!nome || !email || !senha) {
+            alert("Por favor, preencha todos os campos.");
+            return;
+        }
+
+        var userData = {
+            nome: nome,
+            email: email,
+            senha: senha
+        };
+        
+        localStorage.setItem("userData", JSON.stringify(userData));
+        alert("Conta criada com sucesso!");
+        body.className = "sign-in-js"; 
+    }
+
+    function logar() {
+        var emailLogin = document.getElementById('email-login').value.trim();
+        var senhaLogin = document.getElementById('senha-login').value.trim();
+
+        var userData = JSON.parse(localStorage.getItem("userData"));
+
+        if (userData && emailLogin === userData.email && senhaLogin === userData.senha) {
+            alert("Login correto!");
+            location.href = "conta.html";  
+        } else {
+            alert("Email ou senha inválidos!");
+        }
+    }
+</script>
+
+</body>
+</html>
